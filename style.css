@@ -1,0 +1,29 @@
+body {
+    background: cornsilk;
+    font-family:Futura;
+    margin:0;
+    
+}
+
+#header {
+    border: teal double 2px;
+    background: lightgreen;
+    padding:30px;
+}
+
+#navbar {
+    background:lightgray;
+    display:grid;
+    justify-content:end;
+    padding:30px;
+}
+#navbar > ul> li {
+    display:inline-grid;
+    padding:20px;
+}
+
+#footer {
+    background:rgb( 44, 62, 80 );
+    color:lightgray; 
+    padding:30px;
+}
