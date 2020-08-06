@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>HTML Colors</title>
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif
+    }
+
+    #colorContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-rows: repeat(auto-fill, auto);
+      grid-auto-flow: row dense;
+      place-items: stretch;
+      grid-gap: .2em;
+      padding: 0 3em;
+    }
+
+    .color {
+      display: grid;
+      font-size: 1.2em;
+      place-self: center stretch;
+      box-shadow: 2px 4px 8px lightgray;
+      text-shadow: 1px 1px white;
+      padding: .3em;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- <script src="js/scripts.js"></script> -->
+  <div id="header">
+    HTML Colors
+  </div>
+
+  <div id="colorContainer"></div>
+
+  <script src="../scripts/htmlColors.js"></script>
+
+</body>
+
+</html>
