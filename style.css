@@ -2,16 +2,31 @@ body {
     background: cornsilk;
     font-family:Futura;
     margin:0;
-    padding: 0 100px;
-    filter: invert(1) hue-rotate(210deg);
     
 }
 
 #header {
-    background: lightgreen;
-    padding:30px;
+    background: cornflowerblue;
+    padding: 30 100px;
+    margin:0 10vw;
 }
 
+#header h1,h2 {
+    margin:auto;
+    padding: .3em 1em;
+    text-align:right;
+}
+
+h1 {
+    color: moccasin;
+    padding: 5px 35px;
+}
+
+h2{
+    color:moccasin;
+    padding: 5px 35px;
+    opacity:.5;
+}
 #navbar {
     background:lightgray;
     display:grid;
@@ -30,14 +45,19 @@ body {
 
 #main {
     background: rgba(0,0,0,.03);
+    margin:0 10vw;
+    padding: 1em 0;
+    color:steelblue;
 }
 
 #footer {
-    background:rgb( 44, 62, 80 );
+    background:cornsilk;
     color:lightgray; 
     padding:30px;
     display:grid;
     align-self:end;
+    height:auto;
+    text-align:center;
 }
 
 #pages {

@@ -10,7 +10,7 @@
 
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     #colorContainer {
@@ -24,12 +24,26 @@
     }
 
     .color {
+      color: transparent;
       display: grid;
-      font-size: 1.2em;
+      font-size: 1em;
       place-self: center stretch;
       box-shadow: 2px 4px 8px lightgray;
-      text-shadow: 1px 1px white;
+
       padding: .3em;
+    }
+
+    .color:hover {
+      color: rgb(40, 40, 40);
+      text-shadow: none;
+      text-shadow: 1px 1px white;
+    }
+
+    .hex,
+    .rgb,
+    .hsl {
+      display: inline;
+      font-size: .5em;
     }
   </style>
 
