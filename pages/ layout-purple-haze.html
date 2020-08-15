@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Grid Layout 1</title>
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  <style>
+    :root {
+      --cream: rgba(255, 253, 208, .3);
+    }
+
+    body {
+      font-family: Futura;
+      margin-left: 50px;
+      margin-right: 50px;
+      background: linear-gradient(to bottom right, teal, var(--cream));
+    }
+
+    .title {
+      color: purple;
+      text-shadow: 1px 2px 2px var(--cream);
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 100px 1fr 2fr 1fr 100px;
+      grid-template-rows: repeat(5, 1fr);
+      grid-gap: 10px;
+
+    }
+
+    .box {
+      display: grid;
+      background-color: purple;
+      font-size: 2em;
+      color: var(--cream);
+      min-height: 100px;
+      border-radius: 15px;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+      box-shadow:
+        1px 1px 1px 1px rgba(25, 127, 127, .5),
+        2px 2px 2px 2px rgba(25, 127, 127, .4),
+        3px 3px 3px 3px rgba(25, 127, 127, .3),
+        4px 4px 4px 4px rgba(25, 127, 127, .2),
+        5px 5px 5px 5px rgba(25, 127, 127, .1);
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- <script src="js/scripts.js"></script> -->
+  <div class="title">
+    <h1>CSS Grid Layout Example</h1>
+  </div>
+  <div class="content">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+    <div class="box">Box 6</div>
+    <div class="box">Box 7</div>
+    <div class="box">Box 8</div>
+    <div class="box">Box 9</div>
+    <div class="box">Box 10</div>
+    <div class="box">Box 11</div>
+    <div class="box">Box 12</div>
+    <div class="box">Box 13</div>
+    <div class="box">Box 14</div>
+    <div class="box">Box 15</div>
+  </div>
+
+</body>
+
+</html>
