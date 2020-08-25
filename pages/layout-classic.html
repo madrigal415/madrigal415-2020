@@ -1,97 +1,106 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CSS Responsive Grid</title>
-  <style>
-    
-    body{
-        padding: 10px 20px;
-        color:#333333;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    .main-head {
-        grid-area: header;
-        background-color: yellow;
-        padding: 10px;
+    <title>CSS Responsive Grid</title>
+    <style>
+        body {
+            padding: 10px 20px;
+            color: #333333;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-    .content {
-        grid-area: content;
-        background-color: yellowgreen;
-        padding: 10px;
-        }
-    .main-nav {
-        grid-area: nav;
-        background-color: lightblue;
-        padding: 10px;
-        }
-    .side {
-        grid-area: sidebar;
-        background-color:violet;
-        padding: 10px;
-        }
-    .ad {
-        grid-area: ad;
-        background-color:orangered;
-        padding: 10px;
-        }
-    .main-footer {
-        grid-area: footer;
-        background-color:lightgray;
-        padding: 10px;
-        }
-    .wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas: 
-        "header"
-        "nav"
-        "content"
-        "sidebar"
-        "ad"
-        "footer";
-    }
 
-    @media (min-width: 500px) {
+        .main-head {
+            grid-area: header;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: yellowgreen;
+            padding: 10px;
+        }
+
+        .main-nav {
+            grid-area: nav;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .side {
+            grid-area: sidebar;
+            background-color: violet;
+            padding: 10px;
+        }
+
+        .ad {
+            grid-area: ad;
+            background-color: orangered;
+            padding: 10px;
+        }
+
+        .main-footer {
+            grid-area: footer;
+            background-color: lightgray;
+            padding: 10px;
+        }
+
         .wrapper {
-            grid-template-columns: 1fr 3fr;
-            grid-template-areas: 
-            "header  header"
-            "nav     nav"
-            "sidebar content"
-            "ad      footer";
+            display: grid;
+            grid-gap: 20px;
+            grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "sidebar"
+                "ad"
+                "footer";
         }
-        nav ul {
-            display: flex;
-            justify-content: space-between;
-        }
+
+        @media (min-width: 500px) {
+            .wrapper {
+                grid-template-columns: 1fr 3fr;
+                grid-template-areas:
+                    "header  header"
+                    "nav     nav"
+                    "sidebar content"
+                    "ad      footer";
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: space-between;
+            }
         }
 
         @media (min-width: 700px) {
-  .wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: 
-      "header header  header"
-      "nav    content sidebar"
-      "nav    content ad"
-      "footer footer  footer"
-   }
-   nav ul {
-     flex-direction: column;
-   }
-}
+            .wrapper {
+                grid-template-columns: 1fr 4fr 1fr;
+                grid-template-areas:
+                    "header header  header"
+                    "nav    content sidebar"
+                    "nav    content ad"
+                    "footer footer  footer"
+            }
 
-
-  </style>
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
 
 
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="main-head"><h1>The header</h1></header>
+        <header class="main-head">
+            <h1>The header</h1>
+        </header>
         <nav class="main-nav">
             <ul>
                 <li><a href="">Nav 1</a></li>
@@ -101,12 +110,15 @@
         </nav>
         <article class="content">
             <h1>Main article area</h1>
-            <p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.</p>
-        </article> 
+            <p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a
+                two column layout, and then to a three column layout by redefining the grid, and the placement of items
+                on the grid.</p>
+        </article>
         <aside class="side">Sidebar</aside>
         <div class="ad">Advertising</div>
         <footer class="main-footer">The footer</footer>
-</div>
+    </div>
 
 </body>
+
 </html>

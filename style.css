@@ -2,19 +2,20 @@ body {
     background: cornsilk;
     font-family:Futura;
     margin:0;
+    font-size: calc(10px + 1vw);
     
 }
 
 #header {
     background: cornflowerblue;
-    padding: 30 100px;
-    margin:0 10vw;
+    padding: 30 2vw;
+    margin:0 5vw;
 }
 
 #header h1,h2 {
     margin:auto;
     padding: .3em 1em;
-    text-align:right;
+
 }
 
 h1 {
@@ -31,6 +32,7 @@ h2{
     background:lightgray;
     display:grid;
     justify-content:end;
+    font-size: calc(8px + .5vw);
 }
 
 #navbar > ul{
@@ -45,19 +47,20 @@ h2{
 
 #main {
     background: rgba(0,0,0,.03);
-    margin:0 10vw;
+    margin:0 5vw;
     padding: 1em 0;
     color:steelblue;
 }
 
 #footer {
-    background:cornsilk;
+    background:darkviolet;
     color:lightgray; 
-    padding:30px;
+    padding:10px;
     display:grid;
     align-self:end;
     height:auto;
     text-align:center;
+    width:100%;
 }
 
 #pages {
