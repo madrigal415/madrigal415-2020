@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>CSS Animations</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/css-animations.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <header><h1>css animations</h1></header>
+
+    <main>
+      <article>
+        <h2>Simple Transitions</h2>
+        <ul>
+          <li class="item item-1">
+            0.2 second Linear<span class="ball"></span>
+          </li>
+          <li class="item item-2">1 second Ease<span class="ball"></span></li>
+          <li class="item item-3">
+            1 second Ease On, 0.2s Linear Off<span class="ball"></span>
+          </li>
+          <li class="item item-4">Bézier Curve<span class="ball"></span></li>
+        </ul>
+        <details>
+          <summary>code</summary>
+          <xmp id="snippet-container">
+   <ul>
+      <li class="item item-1">
+            0.2 second Linear<span class="ball"></span>
+      </li>
+      <li class="item item-2">
+            1 second Ease<span class="ball"></span>
+      </li>
+          <li class="item item-3">
+            2 second Ease On, 0.5s Linear Off<span class="ball"></span>
+      </li>
+      <li class="item item-4">
+            Bézier Curve<span class="ball"></span>
+      </li>
+    </ul>
+    <style>
+    .item {
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      color: #222;
+      margin-bottom: 10px;
+    }
+    
+    .ball {
+      border-radius: 50%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: tomato;
+    }
+    
+    .item:hover .ball {
+      transform: translateX(300px);
+    }
+    
+    .item-1 .ball {
+      transition: all 0.5s linear;
+    }
+    
+    .item-2 .ball {
+      transition: all 1s ease;
+    }
+    
+    .item-3 .ball {
+      transition: all 0.5s linear;
+    }
+    
+    .item-3:hover .ball {
+      transition: all 2s ease;
+    }
+
+    .item-4 .ball {
+      transition: all 1.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+  </style>
+    </xmp>
+        </details>
+        <details>
+          <summary>notes</summary>
+          <p>notes here</p>
+        </details>
+      </article>
+
+      <article>
+        <h2>Simple Animation</h2>
+        <ul>
+          <li class="item itemA-1">
+            1 second infinite alternate linear<span class="ball"></span>
+          </li>
+          <li class="item itemA-2">2 second ease<span class="ball"></span></li>
+        </ul>
+        <details>
+          <summary>code</summary>
+          <xmp> animations code tbd....</xmp>
+        </details>
+
+        <details>
+          <summary>notes</summary>
+          <p>notes here</p>
+        </details>
+      </article>
+
+      <article>
+        <h2>Simple Transforms</h2>
+        <ul>
+          <li class="item itemT-1">
+            translateX(200px) scale(0.5) rotate(180deg)<span
+              class="square"
+            ></span>
+          </li>
+        </ul>
+        <details>
+          <summary>code</summary>
+          <xmp>code example</xmp>
+        </details>
+
+        <details>
+          <summary>notes</summary>
+          <p>notes here</p>
+        </details>
+      </article>
+
+      <article>
+        <h2>Squash and Stretch</h2>
+
+        <script>
+          function addOpen() {
+            // newsletterDiv.classList.add('open');
+            console.log('ADDED');
+            document.querySelector('#newsletter').classList.add('open');
+          }
+          function removeOpen(event) {
+            event.preventDefault();
+            console.log('REMOVED');
+            document.querySelector('#newsletter').classList.remove('open');
+          }
+        </script>
+
+        <button class="btn" onclick="addOpen()">Sign-up for newsletter</button>
+
+        <div id="newsletter" class="newsletter">
+          <h3>Newsletter Sign-up</h3>
+
+          <form>
+            <button class="btn" id="closeButton" onclick="removeOpen(event)">
+              ×
+            </button>
+            <input type="text" />
+
+            <button disabled class="btn">submit</button>
+          </form>
+        </div>
+        <details>
+          <summary>code</summary>
+          <xmp>newsletter code tbd....</xmp>
+        </details>
+        <details>
+          <summary>notes</summary>
+          <p>notes here</p>
+        </details>
+      </article>
+
+      <article>
+        <h2>Staging</h2>
+
+        <script>
+          function addOpenShade() {
+            // newsletterDiv.classList.add('open');
+            console.log('ADDED');
+            document.querySelector('#newsletterShade').classList.add('open');
+            document.querySelector('body').classList.add('open');
+          }
+          function removeOpenShade(event) {
+            event.preventDefault();
+            console.log('REMOVED');
+            document.querySelector('#newsletterShade').classList.remove('open');
+            document.querySelector('body').classList.remove('open');
+          }
+        </script>
+
+        <button class="btn" onclick="addOpenShade()">
+          Sign-up for newsletter
+        </button>
+        <div id="modal" class="modal">
+          <div id="newsletterShade" class="newsletter">
+            <h3>Newsletter Sign-up</h3>
+
+            <form>
+              <button
+                class="btn"
+                id="closeButton"
+                onclick="removeOpenShade(event)"
+              >
+                ×
+              </button>
+              <input type="text" />
+
+              <button disabled class="btn">submit</button>
+            </form>
+          </div>
+        </div>
+        <details>
+          <summary>code</summary>
+          <xmp>newsletter code tbd....</xmp>
+        </details>
+        <details>
+          <summary>notes</summary>
+          <p>notes here</p>
+        </details>
+      </article>
+    </main>
+    <footer>
+      <a href="#">back to top</a>
+    </footer>
+  </body>
+</html>

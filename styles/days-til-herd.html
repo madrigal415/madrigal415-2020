@@ -1,0 +1,31 @@
+!<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TITLE</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="shortcut icon" href="#">
+
+
+</head>
+
+<body>
+
+  <!-- <script src="jscript.js"></script> --> 
+
+<div id="observablehq-11923001" style="height:100%">
+  <div class="observablehq-chartM"></div>
+</div>
+<script type="module">
+  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+  import define from "https://api.observablehq.com/@madrigal415/days-until-herd-immunity-in-california-counties.js?v=3";
+  (new Runtime).module(define, name => {
+    if (name === "chartM") return Inspector.into("#observablehq-11923001 .observablehq-chartM")();
+  });
+</script>
+
+</body>
+</html>
+
