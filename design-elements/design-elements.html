@@ -1,27 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Elements</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="shortcut icon" href="#" />
 
-    <title>TITLE</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link rel="shortcut icon" href="#">
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%23339999%22></rect><path d=%22M79.93 44.07L79.93 73.95L67.97 73.95L67.97 44.07Q67.97 42.84 67.51 41.74Q67.05 40.64 66.22 39.80Q65.38 38.97 64.28 38.51Q63.18 38.05 61.95 38.05L61.95 38.05Q60.72 38.05 59.65 38.51Q58.57 38.97 57.76 39.80Q56.94 40.64 56.48 41.74Q56.02 42.84 56.02 44.07L56.02 44.07L56.02 73.95L44.02 73.95L44.02 44.07Q44.02 42.84 43.56 41.74Q43.10 40.64 42.27 39.80Q41.43 38.97 40.33 38.51Q39.23 38.05 38.00 38.05L38.00 38.05Q36.77 38.05 35.70 38.51Q34.62 38.97 33.81 39.80Q32.99 40.64 32.53 41.74Q32.07 42.84 32.07 44.07L32.07 44.07L32.07 73.95L20.07 73.95L20.07 26.88L22.97 26.88L26.23 30.49Q28.73 28.38 31.74 27.21Q34.75 26.05 38.00 26.05L38.00 26.05Q41.30 26.05 44.44 27.28Q47.58 28.51 49.96 31.54L49.96 31.54Q51.05 30.05 52.46 28.99Q53.87 27.94 55.43 27.28Q56.99 26.62 58.66 26.34Q60.33 26.05 61.95 26.05L61.95 26.05Q65.69 26.05 68.96 27.46Q72.24 28.86 74.68 31.30Q77.11 33.74 78.52 37.04Q79.93 40.33 79.93 44.07L79.93 44.07Z%22 fill=%22%23ffffff%22></path></svg>"
+    />
 
+    <style>
+      body {
+        background: peachpuff;
+      }
+      .container {
+        /* min width 100vw minus 2rem, max is 80ch; */
+        width: min(80ch, 100vw - 2rem);
+        padding: 10px;
+        margin: 2rem;
+        background: whitesmoke;
+      }
+    </style>
+  </head>
 
-</head>
+  <body>
+    <header>
+      <a href="/">m415</a>
+      <h1>design elements</h1>
+      <div id="navbar"></div>
+    </header>
 
-<body>
-    <h1>design elements</h1>
-    <ul>
-        <li><a href="/pages/design-elements/flat-colors.html">flat colors</a></li>
-        <li><a href="/pages/design-elements/html-colors.html">html colors</a></li>
-        <li><a href="/pages/design-elements/fonts.html">fonts</a></li>
-        <li><a href="/pages/design-elements/gradients.html">gradients</a></li>
-    </ul>
-    <!-- <script src="jscript.js"></script> -->
-
-</body>
-
+    <div class="container">
+      <ul>
+        <li><a href="/design-elements/flat-colors.html">flat colors</a></li>
+        <li><a href="/design-elements/html-colors.html">html colors</a></li>
+        <li><a href="/design-elements/fonts.html">fonts</a></li>
+        <li><a href="/design-elements/gradients.html">gradients</a></li>
+        <li>
+          <a href="/design-elements/animated-gradient.html"
+            >animated gradient</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Animated Gradient</title>
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+    <style>
+      body {
+        font-family: courier;
+      }
+
+      h1 {
+        font-size: 3em;
+        text-align: center;
+        color: linen;
+        text-shadow: 5px 5px 10px rgba(20, 20, 20, 0.5);
+      }
+
+      .container {
+        padding: 20vh 20vw;
+        display: grid;
+        place-items: center;
+      }
+      .gradient-background {
+        background: linear-gradient(278deg, deepskyblue, darkviolet, #f51eeb);
+        background-size: 180% 180%;
+        animation: gradient-animation 18s ease infinite;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="gradient-background">
+    <div class="container">
+      <h1>ANIMATED GRADIENT</h1>
+      <h3>it's moving!</h3>
+      <p>
+        from
+        <a href="https://animated-gradient-background-generator.netlify.app/"
+          >this very cool website</a
+        >.
+      </p>
+    </div>
+
+    <!-- <script src="js/scripts.js"></script> -->
+  </body>
+</html>
