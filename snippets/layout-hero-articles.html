@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <style>
+      /* Typography imported from Google Fonts */
+      @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Playfair Display', serif;
+      }
+
+      p,
+      a {
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+
+      /* Generic styles */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a {
+        background-color: peachpuff;
+        text-decoration: none;
+        color: darkslategrey;
+        border-radius: 0.25rem;
+        text-align: center;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+
+      /* Styles for the hero image */
+      .hero {
+        /* Photo by @thebarlemy on Unsplash */
+        background: url('../assets/barthelemy-de-mazenod-HizBoUoQcl4-unsplash.jpg')
+          center;
+        background-size: cover;
+        padding: 4rem 2rem;
+        /* grid styles */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        align-items: center;
+      }
+
+      .hero > * {
+        color: dimgray;
+      }
+
+      .hero > h1 {
+        font-size: 4rem;
+        padding-bottom: 1rem;
+        color: papayawhip;
+      }
+
+      .hero > article > p {
+        font-size: 1.5rem;
+        font-weight: 200;
+      }
+
+      .hero > article > a {
+        padding: 1rem;
+        margin-top: 0.75rem;
+      }
+
+      /* breweries styles */
+      .breweries {
+        padding: 2rem;
+      }
+
+      .breweries > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 1rem;
+
+        list-style-type: none;
+      }
+
+      .breweries > ul > li {
+        border: 1px solid #e2e2e2;
+        border-radius: 0.5rem;
+      }
+
+      .breweries > ul > li > figure {
+        max-height: 220px;
+        overflow: hidden;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        position: relative;
+      }
+
+      .breweries > ul > li > figure > img {
+        width: 100%;
+      }
+
+      .breweries > ul > li > figure > figcaption {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+      }
+
+      .breweries > ul > li > figure > figcaption > h3 {
+        color: white;
+        padding: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      .breweries > ul > li > p {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 1rem 0.75rem;
+        color: #666666;
+      }
+
+      .breweries > ul > li > a {
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+      }
+    </style>
+
+    <title>layout with hero and articles --- madrigal415</title>
+
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <header>
+      <a href="/">m415</a>
+      <h1>Hero and Articles Layout</h1>
+      <p>
+        layout from
+        <a
+          href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/"
+          >css tricks</a
+        >.
+      </p>
+    </header>
+    <div class="wrapper">
+      <section class="hero">
+        <h1>How do you do?</h1>
+        <article>
+          <p>
+            Find the light in you world that you've always known has existed but
+            were not ready yet to pursue with the full force of you talents and
+            aspirations and drive for purpose.
+          </p>
+          <a href="#breweries">Browse Breweries</a>
+        </article>
+      </section>
+      <section class="breweries" id="breweries">
+        <ul>
+          <li>
+            <figure>
+              <!-- Photo by @thebarlemy on Unsplash -->
+              <img
+                src="../assets/barthelemy-de-mazenod-HizBoUoQcl4-unsplash.jpg"
+                alt="Inside of a school darkly lit"
+              />
+              <figcaption><h3>Billions upon billions</h3></figcaption>
+            </figure>
+            <p>
+              Made in the interiors of collapsing stars star stuff harvesting
+              star light venture billions upon billions Drake Equation brain is
+              the seed of intelligence?
+            </p>
+            <a href="#">Visit Website</a>
+          </li>
+          <li>
+            <figure>
+              <!-- Photo by @thebarlemy on Unsplash -->
+              <img
+                src="../assets/barthelemy-de-mazenod-HizBoUoQcl4-unsplash.jpg"
+                alt="Inside of a school darkly lit"
+              />
+              <figcaption><h3>Drake Equation</h3></figcaption>
+            </figure>
+            <p>
+              Another world citizens of distant epochs from which we spring
+              descended from astronomers Orion's sword shores of the cosmic
+              ocean.
+            </p>
+            <a href="#">Visit Website</a>
+          </li>
+          <li>
+            <figure>
+              <!-- Photo by @thebarlemy on Unsplash -->
+              <img
+                src="../assets/barthelemy-de-mazenod-HizBoUoQcl4-unsplash.jpg"
+                alt="Inside of a school darkly lit"
+              />
+              <figcaption><h3>Vast cosmic arena</h3></figcaption>
+            </figure>
+            <p>
+              Galaxies the ash of stellar alchemy prime number science
+              inconspicuous motes of rock and gas brain is the seed of
+              intelligence.
+            </p>
+            <a href="#">Visit Website</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
