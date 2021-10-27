@@ -29,14 +29,14 @@ body {
 header {
   background: ghostwhite;
   box-shadow: 0px 3px 6px 0px gray;
+  padding: 2vh 5vw;
 }
 
 main {
-  flex: 1;
   display: grid;
-  grid-template-columns: repeat (auto-fit, minmanx(200px, 1fr));
-  grid-row-gap: 10px;
-  padding: 0 15vw;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  padding: calc(1rem + 2vh) 20vw;
   margin: 20px 0;
 }
 
@@ -44,12 +44,12 @@ article {
   border-radius: 15px;
   padding: 25px;
   background: peachpuff;
-  min-height: 150px;
+  min-height: 5rem;
 }
 
 h1 {
   color: teal;
-  padding: 5px 15vw;
+  padding: 5px 3vw;
   background: yelllow;
 }
 

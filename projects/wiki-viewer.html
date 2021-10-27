@@ -1,0 +1,147 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Wiki Viewer</title>
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+    <style>
+      :root {
+        --tealy: rgb(14, 207, 175);
+      }
+
+      body {
+        font-family: helvetica, arial, 'Lucida Sans', 'Lucida Sans Regular',
+          'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 0 200px 0 200px;
+      }
+
+      h1 {
+        color: cornflowerblue;
+        text-decoration: wavy underline var(--tealy);
+        text-align: center;
+      }
+
+      a.nostyle:link {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: grab;
+      }
+
+      a.nostyle:visited {
+        text-decoration: inherit;
+        color: inherit;
+        cursor: grab;
+      }
+
+      .rando {
+        font-weight: bold;
+        color: var(--tealy) !important;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .search {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin: 10px;
+      }
+
+      .btn {
+        background-color: cornflowerblue;
+        color: lightyellow;
+        font-size: 1em;
+        border-radius: 10px;
+        min-height: 30px;
+        min-width: 100px;
+        margin: 10px;
+      }
+
+      .content {
+        border-style: solid;
+        border-color: var(--tealy);
+        border-radius: 10px;
+        min-height: 200px;
+        min-width: 400px;
+        margin: 20px auto 0px auto;
+        padding: 20px;
+        box-shadow: 3px 3px 5px rgb(100, 149, 237, 0.5);
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div>
+      <h1>Wikipedia Viewer!</h1>
+    </div>
+    <div class="rando">
+      <a class="nostyle" href="https://en.wikipedia.org/wiki/Special:Random"
+        >Click here to go to a random page.</a
+      >
+    </div>
+    <div class="search">
+      Search: <input id="input" type="text" name="LastName" />
+      <button class="btn" type="submit">Submit</button>
+    </div>
+    <div class="content"></div>
+
+    <!-- <script src="js/scripts.js"></script> -->
+    <script>
+      'use strict';
+
+      const url =
+        'https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=5&generator=search&origin=*&gsrsearch=tacos';
+
+      const url2 =
+        'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&utf8=1&srsearch=Albert%20Einstein';
+
+      const search = document.querySelector('.search');
+      const submit = document.querySelector('button[type="submit"]');
+      const content = document.querySelector('.content');
+      const searchInput = document.querySelector('#input');
+
+      function spaceSwap(arg) {
+        return arg.replace(/\s/i, '_');
+      }
+
+      function getWiki(searchTerm) {
+        const url1 = `https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=15&generator=search&origin=*&gsrsearch=${searchTerm}&prop=extracts%7Cinfo%7Ccategories%7Clinks%7Cdescription&exintro=true&explaintext=true&exsentences=1`;
+
+        $.getJSON(url1, function (data) {
+          const pages = data.query.pages;
+          console.log(data);
+
+          let listPages = '<ul>';
+          $.each(pages, function (page, value) {
+            listPages += `<li><a href="https://en.wikipedia.org/wiki/${spaceSwap(
+              value.title
+            )}">${value.title}</a><br>${value.extract}</li>`;
+            console.log(value.title);
+          });
+          listPages += '</ul>';
+          content.innerHTML = listPages;
+        });
+      }
+
+      // grab input and send to Wiki
+      function getInput(e) {
+        e.preventDefault;
+        const searchTerm = searchInput.value;
+        console.log(e);
+        console.log(this);
+        console.log(searchTerm);
+        getWiki(searchTerm);
+      }
+
+      submit.addEventListener('click', getInput);
+    </script>
+  </body>
+</html>

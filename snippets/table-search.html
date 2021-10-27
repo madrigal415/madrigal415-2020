@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>table search --- madrigal415</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="shortcut icon" href="#" />
+  </head>
+
+  <body>
+    <header>
+      <h1>TABLE SEARCH</h1>
+    </header>
+    <main>
+      <input id="res-filter" type="search" placeholder="Search..." />
+      <table id="res-table" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Off-Leash</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Golden Gate Park Dog Training Area</td>
+            <td>San Francisco</td>
+            <td>yes</td>
+            <td>cool structures for human and canine climbing</td>
+          </tr>
+          <tr>
+            <td>Sausalito Dog Park</td>
+            <td>Sausalito</td>
+            <td>yes</td>
+            <td>Patrolled by vigilant volunteers</td>
+          </tr>
+          <tr>
+            <td>Point Isabel Regional Shoreline</td>
+            <td>El Cerrito</td>
+            <td>yes</td>
+            <td>many dogs go here, hot dogs at costco nearby</td>
+          </tr>
+          <tr>
+            <td>Briones RegionalPark</td>
+            <td>Martinez</td>
+            <td>no</td>
+            <td>pretty views, watch out for the cows</td>
+          </tr>
+          <tr>
+            <td>Robert Sibley Volcanic Regional Preserve</td>
+            <td>Oakland</td>
+            <td>yes</td>
+            <td>steep concrete path yields to pretty scenic hills</td>
+          </tr>
+          <tr>
+            <td>Berkeley Marina</td>
+            <td>Berkeley</td>
+            <td>yes</td>
+            <td>lots of fun places to hide</td>
+          </tr>
+          <tr>
+            <td>Redwood Regional Dog Park</td>
+            <td>Oakland</td>
+            <td>yes</td>
+            <td>two entrances, nestled in the redwoods</td>
+          </tr>
+          <tr>
+            <td>Fort Funston</td>
+            <td>San Francisco</td>
+            <td>yes</td>
+            <td>a littly sandy as it is a beach</td>
+          </tr>
+          <tr>
+            <td>Peer's Park</td>
+            <td>Palo Alto</td>
+            <td>yes</td>
+            <td>next to train, good amount of space</td>
+          </tr>
+          <tr>
+            <td>Foothills Park</td>
+            <td>Palo Alto</td>
+            <td>no</td>
+            <td>
+              lots of trails with great views, dont bring dogs on weekends or
+              holidays
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script>
+        document
+          .getElementById('res-filter')
+          .addEventListener('keyup', filterList);
+        function filterList() {
+          var srch = document.getElementById('res-filter');
+          var val = srch.value.toLowerCase();
+          var valArr = val.split(' ');
+          var tbl = document.getElementById('res-table');
+          var tblLength = tbl.rows.length;
+          if (tblLength != 0) {
+            for (var i = 1; i < tblLength; i++) {
+              tbl.rows[i].style.display = 'table-row';
+              for (var j = 0; j < valArr.length; j++) {
+                if (
+                  tbl.rows[i].textContent.toLowerCase().indexOf(valArr[j]) ===
+                  -1
+                ) {
+                  tbl.rows[i].style.display = 'none';
+                }
+              }
+            }
+          }
+        }
+      </script>
+    </main>
+  </body>
+</html>
