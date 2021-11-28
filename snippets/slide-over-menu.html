@@ -1,255 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <title>slide over menu --- madrigal415</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="#" />
     <style>
-        body {
-            margin: 0;
-            font-family: Garamond;
-        }
+      body {
+        margin: 0;
+        font-family: Garamond;
+      }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            position: relative;
-        }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        position: relative;
+      }
 
-        h1,
-        h2,
-        h3 {
-            font-family: Roboto;
-        }
+      h1,
+      h2,
+      h3 {
+        font-family: Roboto;
+      }
 
-        #content {
-            padding: 0 20%;
-            margin: 5px;
-        }
+      #content {
+        padding: 0 20%;
+        margin: 5px;
+      }
 
-        .site-title {
-            font-size: 1.5rem;
-            text-align: center;
-        }
+      .site-title {
+        font-size: 1.5rem;
+        text-align: center;
+      }
 
-        #site-title {
-            display: grid;
-            grid-template-columns: 1fr 30px;
-            align-content: center;
-            justify-content: center;
+      #site-title {
+        display: grid;
+        grid-template-columns: 1fr 30px;
+        align-content: center;
+        justify-content: center;
+      }
 
-        }
+      .nav-toggle {
+        position: absolute;
+        top: 10%;
+        padding: 20px;
+        cursor: pointer;
+      }
 
-        .nav-toggle {
-            position: absolute;
-            top: 10%;
-            padding: 20px;
-            cursor: pointer;
-        }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
 
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
+      nav li {
+        list-style: none;
+      }
 
-        nav li {
-            list-style: none;
-        }
+      .main-navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        text-align: center;
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+        padding-top: calc(5% + 1rem);
+      }
 
-        .main-navigation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #222;
-            text-align: center;
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-            padding-top: calc(5% + 1rem);
-        }
+      button {
+        background: seashell;
+        border: 1px solid gray;
+        border-radius: 2rem 2rem;
+        padding: 1em;
+        cursor: pointer;
+      }
 
-        button {
-            background: seashell;
-            border: 1px solid gray;
-            border-radius: 2rem 2rem;
-            padding: 1em;
-            cursor: pointer;
-        }
+      button:focus {
+        outline: none;
+      }
 
-        button:focus {
-            outline: none;
-        }
+      button.active {
+        background: lightseagreen;
+      }
 
-        button.active {
-            background: lightseagreen;
-        }
+      .top {
+        transform: translateY(-100%);
+      }
 
-        .top {
-            transform: translateY(-100%);
-        }
+      .right {
+        transform: translateX(100%);
+      }
 
-        .right {
-            transform: translateX(100%);
-        }
+      .bottom {
+        transform: translateY(100%);
+      }
 
-        .bottom {
-            transform: translateY(100%);
-        }
+      .left {
+        transform: translateX(-100%);
+      }
 
-        .left {
-            transform: translateX(-100%);
-        }
+      .main-navigation.open {
+        transform: translateX(0);
+      }
 
+      .main-navigation .nav-toggle {
+        padding: 20px;
+        top: 5%;
+        right: 5%;
+        text-align: none;
+      }
 
-        .main-navigation.open {
-            transform: translateX(0);
-        }
+      .main-navigation ul {
+        padding: 0;
+        margin: 0;
+      }
 
-        .main-navigation .nav-toggle {
-            padding: 20px;
-            top: 5%;
-            right: 5%;
-            text-align: none;
-        }
+      .main-navigation ul a {
+        padding: 10px 20px;
+        display: block;
+        font-size: 1.5em;
+      }
 
-
-        .main-navigation ul {
-            padding: 0;
-            margin: 0;
-        }
-
-        .main-navigation ul a {
-            padding: 10px 20px;
-            display: block;
-            font-size: 1.5em;
-        }
-
-        .main-navigation ul a:hover {
-            background: #333;
-        }
+      .main-navigation ul a:hover {
+        background: #333;
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- <script src="jscript.js"></script> -->
     <header>
+      <h1 class="site-title">Slide Over Menu</h1>
+      <div class="nav-toggle"><i class="fa fa-bars"></i></div>
 
-        <h1 class="site-title">Slide Over Menu</h1>
-        <div class="nav-toggle"><i class="fa fa-bars"></i></div>
-
-        <nav class="main-navigation">
-            <span class="nav-toggle"><i class="fa fa-window-close"></i></span>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact me</a></li>
-            </ul>
-        </nav>
+      <nav class="main-navigation">
+        <span class="nav-toggle"><i class="fa fa-window-close"></i></span>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact me</a></li>
+        </ul>
+      </nav>
     </header>
     <div id="content">
-        <h3>Playing with toggle</h3>
-        <button id="top">From top</button>
-        <button id="right">From right</button>
-        <button id="bottom">From bottom</button>
-        <button class="active" id="left">From left</button>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Laoreet sit
-            amet
-            cursus sit amet dictum sit. Dapibus ultrices in iaculis nunc sed augue lacus. Ultrices eros in cursus turpis
-            massa. Amet purus gravida quis blandit turpis cursus in hac habitasse. Suspendisse faucibus interdum posuere
-            lorem ipsum. Est sit amet facilisis magna etiam. Sit amet est placerat in egestas. Adipiscing diam donec
-            adipiscing tristique risus nec feugiat in. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum.
-            Sem
-            nulla pharetra diam sit amet nisl suscipit. Ornare aenean euismod elementum nisi quis eleifend. Et malesuada
-            fames ac turpis egestas maecenas. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin.
-            Venenatis cras sed felis eget velit aliquet. Proin libero nunc consequat interdum. At in tellus integer
-            feugiat
-            scelerisque varius morbi enim nunc. Vel pretium lectus quam id leo in vitae. Accumsan in nisl nisi
-            scelerisque
-            eu ultrices.</p>
+      <h3>Playing with toggle</h3>
+      <button id="top">From top</button>
+      <button id="right">From right</button>
+      <button id="bottom">From bottom</button>
+      <button class="active" id="left">From left</button>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Vestibulum rhoncus
+        est pellentesque elit ullamcorper dignissim cras tincidunt. Laoreet sit
+        amet cursus sit amet dictum sit. Dapibus ultrices in iaculis nunc sed
+        augue lacus. Ultrices eros in cursus turpis massa. Amet purus gravida
+        quis blandit turpis cursus in hac habitasse. Suspendisse faucibus
+        interdum posuere lorem ipsum. Est sit amet facilisis magna etiam. Sit
+        amet est placerat in egestas. Adipiscing diam donec adipiscing tristique
+        risus nec feugiat in. Pretium vulputate sapien nec sagittis aliquam
+        malesuada bibendum. Sem nulla pharetra diam sit amet nisl suscipit.
+        Ornare aenean euismod elementum nisi quis eleifend. Et malesuada fames
+        ac turpis egestas maecenas. Dolor sit amet consectetur adipiscing elit
+        duis tristique sollicitudin. Venenatis cras sed felis eget velit
+        aliquet. Proin libero nunc consequat interdum. At in tellus integer
+        feugiat scelerisque varius morbi enim nunc. Vel pretium lectus quam id
+        leo in vitae. Accumsan in nisl nisi scelerisque eu ultrices.
+      </p>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Laoreet sit
-            amet cursus sit amet dictum sit. Dapibus ultrices in iaculis nunc sed augue lacus. Ultrices eros in cursus
-            turpis massa.
-            Amet purus gravida quis blandit turpis cursus in hac habitasse. Suspendisse faucibus interdum posuere lorem
-            ipsum.
-            Est sit amet facilisis magna etiam. Sit amet est placerat in egestas. Adipiscing diam donec adipiscing
-            tristique
-            risus
-            nec feugiat in. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Sem nulla pharetra diam
-            sit
-            amet
-            nisl suscipit. Ornare aenean euismod elementum nisi quis eleifend. Et malesuada fames ac turpis egestas
-            maecenas.
-            Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Venenatis cras sed felis eget velit
-            aliquet.
-            Proin libero nunc consequat interdum. At in tellus integer feugiat scelerisque varius morbi enim nunc. Vel
-            pretium
-            lectus quam id leo in vitae. Accumsan in nisl nisi scelerisque eu ultrices.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Vestibulum rhoncus
+        est pellentesque elit ullamcorper dignissim cras tincidunt. Laoreet sit
+        amet cursus sit amet dictum sit. Dapibus ultrices in iaculis nunc sed
+        augue lacus. Ultrices eros in cursus turpis massa. Amet purus gravida
+        quis blandit turpis cursus in hac habitasse. Suspendisse faucibus
+        interdum posuere lorem ipsum. Est sit amet facilisis magna etiam. Sit
+        amet est placerat in egestas. Adipiscing diam donec adipiscing tristique
+        risus nec feugiat in. Pretium vulputate sapien nec sagittis aliquam
+        malesuada bibendum. Sem nulla pharetra diam sit amet nisl suscipit.
+        Ornare aenean euismod elementum nisi quis eleifend. Et malesuada fames
+        ac turpis egestas maecenas. Dolor sit amet consectetur adipiscing elit
+        duis tristique sollicitudin. Venenatis cras sed felis eget velit
+        aliquet. Proin libero nunc consequat interdum. At in tellus integer
+        feugiat scelerisque varius morbi enim nunc. Vel pretium lectus quam id
+        leo in vitae. Accumsan in nisl nisi scelerisque eu ultrices.
+      </p>
     </div>
+  </body>
+  <script>
+    var tog = document.querySelectorAll('.nav-toggle');
+    var mainNav = document.querySelector('.main-navigation');
+    var button = document.querySelectorAll('button');
 
-</body>
-<script>
-
-    var tog = document.querySelectorAll(".nav-toggle");
-    var mainNav = document.querySelector(".main-navigation");
-    var button = document.querySelectorAll("button");
-
-    tog.forEach(item => {
-        item.addEventListener("click", function () {
-            console.log(mainNav.classList);
-            mainNav.classList.toggle("open");
-        })
+    tog.forEach((item) => {
+      item.addEventListener('click', function () {
+        console.log(mainNav.classList);
+        mainNav.classList.toggle('open');
+      });
     });
 
-    button.forEach(buttonEl => {
-        buttonEl.addEventListener("click", function () {
-            button.forEach(b => b.classList.remove("active"));
-            mainNav.classList.remove("top", "right", "left", "bottom");
-            console.log(this);
-            this.setAttribute("class", "active");
-            switch (this.id) {
-                case "top":
-                    mainNav.classList.add("top");
-                    // code block
-                    break;
-                case "right":
-                    console.log("right")
-                    mainNav.classList.add("right");
-                    // code block
-                    break;
+    button.forEach((buttonEl) => {
+      buttonEl.addEventListener('click', function () {
+        button.forEach((b) => b.classList.remove('active'));
+        mainNav.classList.remove('top', 'right', 'left', 'bottom');
+        console.log(this);
+        this.setAttribute('class', 'active');
+        switch (this.id) {
+          case 'top':
+            mainNav.classList.add('top');
+            // code block
+            break;
+          case 'right':
+            console.log('right');
+            mainNav.classList.add('right');
+            // code block
+            break;
 
-                case "left":
-                    console.log("left")
-                    mainNav.classList.add("left");
+          case 'left':
+            console.log('left');
+            mainNav.classList.add('left');
 
-                    break;
-                case "bottom":
-                    console.log("bottom")
-                    mainNav.classList.add("bottom");
-                    // code block
-                    break;
-                default:
-                    // code block
-                    console.log("def")
-            }
-        })
+            break;
+          case 'bottom':
+            console.log('bottom');
+            mainNav.classList.add('bottom');
+            // code block
+            break;
+          default:
+            // code block
+            console.log('def');
+        }
+      });
     });
-
-
-
-</script>
-
+  </script>
 </html>
